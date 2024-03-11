@@ -40,3 +40,19 @@ function delete ($id){
     $requete->execute();
 }
 
+function Update($id_produit,$nom_produit,$descriptions,$prix,$quantite_stock){
+    global $pdo;
+    // Préparez la requête de mise à jour
+    $requete = $pdo->prepare("UPDATE produit SET nom_produit = :nom_produit, descriptions = :descriptions , prix =:prix, quantite_stock =:quantite_stock WHERE id_produit = :id_produit");
+
+    // Liez les valeurs aux paramètres de la requête
+    $requete->bindParam(':nom_produit', $nom_produit);
+    $requete->bindParam(':descriptions', $descriptions);
+    $requete->bindParam(':prix', $prix);
+    $requete->bindParam(':quantite_stock', $quantite_stock);
+    $requete->bindParam(':id_produit', $id_produit);
+
+    // Exécutez la requête
+    $requete->execute();
+}
+
