@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Stock management</title>
 </head>
 <body>
-    hello world
+    <?php require 'navbar.php';?>
     
 </body>
 </html>
