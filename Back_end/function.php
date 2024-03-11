@@ -15,3 +15,15 @@ function insert_products($nom_product,$descriptions,$prix,$quantite_stock){
     // Exécutez la requête
     $requete->execute();
 }
+function read(){
+    global $pdo;
+    $requete = $pdo->prepare("SELECT * FROM produit");
+
+        // Exécutez la requête
+        $requete->execute();
+
+        // Récupérez les résultats
+        $resultats = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        return $resultats;
+}
