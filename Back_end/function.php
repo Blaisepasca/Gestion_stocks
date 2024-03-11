@@ -27,3 +27,16 @@ function read(){
 
         return $resultats;
 }
+
+function delete ($id){
+    global $pdo;
+    // Préparez la requête de suppression
+    $requete = $pdo->prepare("DELETE FROM produit WHERE id_produit = :id");
+
+    // Liez la valeur du paramètre :id
+    $requete->bindParam(':id', $id);
+
+    // Exécutez la requête
+    $requete->execute();
+}
+
