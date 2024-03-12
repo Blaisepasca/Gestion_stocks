@@ -16,6 +16,7 @@ function insert_products($nom_produit,$descriptions,$prix,$quantite_stock){
     // Exécutez la requête
     $requete->execute();
 }
+// function for reading Product
 function read_product(){
     global $pdo;
     $requete = $pdo->prepare("SELECT * FROM produit");
@@ -57,43 +58,54 @@ function Update_product($id_produit,$nom_produit,$descriptions,$prix,$quantite_s
     $requete->execute();
 }
              //create Crud du fournisseur
-    function Insert_supplier($nom_produit,$descriptions,$prix,$quantite_stock){
+    function Insert_supplier($id_fournisseur, $nom_fournisseur, $adresse, $telephone){
         global $pdo;
 
     
-$stmt = $pdo->prepare("INSERT INTO produit (nom_produit, descriptions,prix,quantite_stock ) VALUES (:nom_produit, :descriptions, :prix, :quantite_stock)");
-$stmt->bindParam(':nom_produit', $nom_produit);
-$stmt->bindParam(':descriptions', $descriptions);
-$stmt->bindParam(':prix', $prix);
-$stmt->bindParam(':quantite_stock ', $quantite_stock );
-$stmt->bindParam(':id_produit ', $id_produit );
+$stmt = $pdo->prepare("INSERT INTO produit (nom_fournisseur, adresse,telephone ) VALUES (:nom_fournisseur, :adresse,:telephone)");
+$stmt->bindParam(':nom_fournisseur', $nom_fournisseur);
+$stmt->bindParam(':adresse', $adresse);
+$stmt->bindParam(':telephone', $telephone);
+$stmt->bindParam(':id_fournisseur ', $id_fournisseur);
 
 
 $stmt->execute();
 
     }
         //function to read supplier
-function readSupplier($id_produit,$nom_produit,$descriptions,$prix,$quantite_stock){
+function readSupplier($id_fournisseur){
     global $pdo;
 
     $stmt = $pdo->prepare("SELECT * FROM produit WHERE id_produit = :id_produit");
-    $stmt->bindParam(':id_produit', $id_produit);
+    $stmt->bindParam(':id_fournisseur', $id_fournisseur);
     $stmt->execute();
 
 }
 // function to update supplier
-function Update_Supplier(){
+function Update_Supplier($id_fournisseur, $nom_fournisseur, $adresse, $telephone){
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE produit SET  nom_produit= :nom_produit, descriptions = :descriptions,  prix= :prix WHERE id_produit = :id_produit");
-    $stmt->bindParam(':nom_produit', $newnom_produit);
-    $stmt->bindParam(':descriptions', $newdescriptions);
-    $stmt->bindParam(':prix', $newprix);
-    $stmt->bindParam(':id_produit', $id_produit);
+    $stmt = $pdo->prepare("UPDATE produit SET  nom_fournisseur= :nom_fournisseur, adresse = :adresse,  telephone= :telephone WHERE id_fournisseur = :id_fournisseur");
+    $stmt->bindParam(':nom_fournisseur', $newnom_fournisseur);
+    $stmt->bindParam(':adresse', $newadresse);
+    $stmt->bindParam(':telephone', $newtelephone);
+    $stmt->bindParam(':id_fournisseur', $id_fournisseur);
     
     if ($stmt->execute()) {
         return true; // Update successful
     } else {
         return false; // Update failed
+    }
+}
+// function for delete supplier
+function deleteSupplier($id_fournisseur) {
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM produit WHERE  id_produit= :id_produit");
+    $stmt->bindParam(':id_produit', $id_fournisseur);
+
+    if ($stmt->execute()) {
+        return true; // Deletion successful
+    } else {
+        return false; // Deletion failed
     }
 }
 
