@@ -3,5 +3,35 @@ body{
     padding: 0;
 }
 .navbar{
+    height: 50px;
+    width: 100%;
+    background-color: #353333;
 
+
+    
+}
+.items_container{
+    width: 50%;
+    float: right;
+
+
+}
+.items_container ul {
+    display: inline-flex;
+    text-decoration: none;
+    
+}
+.items_container ul .items{
+    margin-right: 30px;
+    list-style-type: none; 
+    
+}
+.items_container ul .items a{
+    text-decoration: none;
+    color: rgb(179, 177, 177);
+    transition: transform 0.3s;
+}
+.items_container ul .items a:hover{
+    color: white;
+    transform: scale(1.2);
 }
