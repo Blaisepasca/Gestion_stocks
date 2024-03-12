@@ -108,6 +108,16 @@ function deleteSupplier($id_fournisseur) {
         return false; // Deletion failed
     }
 }
+// function for creating command
+function createCommand($nom_fournisseur, $adresse, $telephone) {
+    global $pdo;
+    $stmt = $pdo->prepare("INSERT INTO produit ( nom_fournisseur, adresse, telephone) VALUES (:nom_fournisseu, :adresse, :telephone)");
+    $stmt->bindParam(':nom_fournisseur', $nom_fournisseur);
+    $stmt->bindParam(':adresse', $adresse);
+    $stmt->bindParam(':telephone', $telephone);
+    
+    return $stmt->execute();
+}
 
 
 
