@@ -118,6 +118,12 @@ function createCommand($nom_fournisseur, $adresse, $telephone) {
     
     return $stmt->execute();
 }
+ // function for reading a command
+ function getCommands($pdo) {
+    global $pdo;
+    $stmt = $pdo->query("SELECT * FROM produit");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 
