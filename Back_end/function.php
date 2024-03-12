@@ -16,7 +16,7 @@ function insert_products($nom_produit,$descriptions,$prix,$quantite_stock){
     // Exécutez la requête
     $requete->execute();
 }
-function read(){
+function read_product(){
     global $pdo;
     $requete = $pdo->prepare("SELECT * FROM produit");
 
@@ -29,7 +29,7 @@ function read(){
         return $resultats;
 }
 
-function delete ($id){
+function delete_product($id){
     global $pdo;
     // Préparez la requête de suppression
     $requete = $pdo->prepare("DELETE FROM produit WHERE id_produit = :id");
@@ -40,8 +40,8 @@ function delete ($id){
     // Exécutez la requête
     $requete->execute();
 }
-
-function Update($id_produit,$nom_produit,$descriptions,$prix,$quantite_stock){
+        // function to update product
+function Update_product($id_produit,$nom_produit,$descriptions,$prix,$quantite_stock){
     global $pdo;
     // Préparez la requête de mise à jour
     $requete = $pdo->prepare("UPDATE produit SET nom_produit = :nom_produit, descriptions = :descriptions , prix =:prix, quantite_stock =:quantite_stock WHERE id_produit = :id_produit");
@@ -72,8 +72,8 @@ $stmt->bindParam(':id_produit ', $id_produit );
 $stmt->execute();
 
     }
-
-function readSupplier(){
+        //function to read supplier
+function readSupplier($id_produit,$nom_produit,$descriptions,$prix,$quantite_stock){
     global $pdo;
 
     $stmt = $pdo->prepare("SELECT * FROM produit WHERE id_produit = :id_produit");
@@ -81,5 +81,23 @@ function readSupplier(){
     $stmt->execute();
 
 }
+// function to update supplier
+function Update_Supplier(){
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE produit SET  nom_produit= :nom_produit, descriptions = :descriptions,  prix= :prix WHERE id_produit = :id_produit");
+    $stmt->bindParam(':nom_produit', $newnom_produit);
+    $stmt->bindParam(':descriptions', $newdescriptions);
+    $stmt->bindParam(':prix', $newprix);
+    $stmt->bindParam(':id_produit', $id_produit);
+    
+    if ($stmt->execute()) {
+        return true; // Update successful
+    } else {
+        return false; // Update failed
+    }
+}
+
+
+
     
 
