@@ -4,14 +4,14 @@ require 'BDD.php';
 function insert_products($nom_produit,$descriptions,$prix,$quantite_stock){
     global $pdo;
     // Préparez la requête d'insertion
-    $requete = $pdo->prepare("INSERT INTO produit (nom_produit, descriptions,prix,quantite_stock) VALUES (:nom_product, :descriptions,:prix,:quantite_stock)");
+    $requete = $pdo->prepare("INSERT INTO produit (nom_produit, descriptions,prix,quantite_stock) VALUES (:nom_produit, :descriptions,:prix,:quantite_stock)");
 
     // Liez les valeurs aux paramètres de la requête
     $requete->bindParam(':nom_produit',$nom_produit );
     $requete->bindParam(':descriptions', $descriptions);
     $requete->bindParam(':prix', $prix);
     $requete->bindParam(':quantite_stock', $quantite_stock);
-    $requete->bindParam(':quantite_stock', $quantite_stock);
+    
 
     // Exécutez la requête
     $requete->execute();
@@ -72,4 +72,14 @@ $stmt->bindParam(':id_produit ', $id_produit );
 $stmt->execute();
 
     }
+
+function readSupplier(){
+    global $pdo;
+
+    $stmt = $pdo->prepare("SELECT * FROM produit WHERE id_produit = :id_produit");
+    $stmt->bindParam(':id_produit', $id_produit);
+    $stmt->execute();
+
+}
+    
 
