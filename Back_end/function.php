@@ -137,6 +137,15 @@ function updateCommand($id_command, $id_produit, $id_fournisseur,$date_commande,
     
     return $stmt->execute();
 }
+// Delete a command
+function deleteCommand($id) {
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM produit WHERE id = :id");
+    $stmt->bindParam(':$id_command', $id_command);
+    
+    return $stmt->execute();
+}
+
 
 
 
