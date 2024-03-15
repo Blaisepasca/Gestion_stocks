@@ -109,12 +109,13 @@ function deleteSupplier($id_fournisseur) {
     }
 }
 // function for creating command
-function createCommand($nom_fournisseur, $adresse, $telephone) {
+function createCommand($id_produit, $id_fournisseur,$date_commande,$quantite_commandee) {
     global $pdo;
-    $stmt = $pdo->prepare("INSERT INTO produit ( nom_fournisseur, adresse, telephone) VALUES (:nom_fournisseu, :adresse, :telephone)");
-    $stmt->bindParam(':nom_fournisseur', $nom_fournisseur);
-    $stmt->bindParam(':adresse', $adresse);
-    $stmt->bindParam(':telephone', $telephone);
+    $stmt = $pdo->prepare("INSERT INTO produit (id_fournisseur , id_produit, date_commande,quantite_commandee) VALUES (:id_fournisseur, :id_produit, :date_commande, :quantite_commandee)");
+    $stmt->bindParam(':id_fournisseur', $id_fournisseur);
+    $stmt->bindParam(':id_produit', $id_produit);
+    $stmt->bindParam(':date_commande', $date_commande);
+    $stmt->bindParam(':quantite_commandee', $quantite_commandee);
     
     return $stmt->execute();
 }
@@ -123,6 +124,18 @@ function createCommand($nom_fournisseur, $adresse, $telephone) {
     global $pdo;
     $stmt = $pdo->query("SELECT * FROM produit");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+// function to Update command
+function updateCommand($id_command, $id_produit, $id_fournisseur,$date_commande,$quantite_commandee) {
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE produit SET id_produit = :id_produit, id_fournisseur = :id_fournisseur ,date_commande =:date_commande,quantite_commandee =:quantite_commandee WHERE id_command = :id_command");
+    $stmt->bindParam(':id_produit', $id_produit);
+    $stmt->bindParam(':id_fournisseur', $id_fournisseur);
+    $stmt->bindParam(':date_commande', $date_commande);
+    $stmt->bindParam(':quantite_commandee',$quantite_commandee);
+    $stmt->bindParam(':id_command', $id_command);
+    
+    return $stmt->execute();
 }
 
 
