@@ -35,3 +35,77 @@ body{
     color: white;
     transform: scale(1.2);
 }
+/* css of product.php*/
+
+.product{
+    height: 150px;
+    width: 40%;
+    padding: 10px;
+    background-color:#e5e5e5;
+    margin: auto;
+    border-radius: 15px;
+}
+.name{
+    display: block;
+}
+.nameqte{
+    
+    display: inline-flex;
+    width: 100%;
+}
+.name, .quantity {
+    width: 50%;
+}
+.name input, .quantity input{
+    width: 96%;
+    height: 25px;
+}
+.desiprice{
+    display: inline-flex;
+    width: 100%;
+    
+
+}
+.designation{
+    width: 70%;
+    
+}
+.designation textarea{
+    width: 95%;
+}
+.price{
+    width: 30%;
+   
+}
+.price input{
+    width: 93%;
+}
+
+.button{
+    display: flex;
+    justify-content: end;
+        
+}
+.button button{
+    border: none;
+    border-radius: 10px;
+    background-color:#353333;
+    color: #e5e5e5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -5px;
+    
+    
+}
+.produit{
+    font-weight: bold;
+    padding-left: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+label{
+    font-size: 20px;
+}
