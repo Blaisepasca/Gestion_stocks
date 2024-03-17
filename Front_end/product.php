@@ -11,26 +11,26 @@
 <div class="produit">Product</div>
 
     <div class="product">
-        <form action="" class='forme'>
+        <form action="../Back_end/produit.php" class='forme' method="post">
            
            <div class="nameqte">
             <div class='name'>
                 <label >Name</label> <br>
-                <input type="text" placeholder="The name">
+                <input type="text" placeholder="The name" name='name'>
             </div>
             <div class="quantity">
                 <label>Quantity</label> <br>
-                <input type="number" placeholder='Quantity'>
+                <input type="number" placeholder='Quantity' name='quantity'>
             </div>
            </div>
            <div class="desiprice">
            <div class="designation">
                 <label>Designation</label><br>
-                <textarea id="message" name="message" rows="3"></textarea>
+                <textarea id="message" rows="3" name='designation'></textarea>
            </div>
            <div class="price">
             <label>Price</label> <br>
-            <input type="number"placeholder='The number'>
+            <input type="number"placeholder='The number' name='price'>
            </div>
            </div>
           
