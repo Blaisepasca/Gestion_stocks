@@ -38,7 +38,7 @@ body{
 /* css of product.php*/
 
 .product{
-    height: 150px;
+    height: 160px;
     width: 40%;
     padding: 10px;
     background-color:#e5e5e5;
@@ -84,6 +84,7 @@ body{
 .button{
     display: flex;
     justify-content: end;
+    
         
 }
 .button button{
@@ -99,6 +100,10 @@ body{
     
     
 }
+.button button:hover{
+    background-color: white;
+    color: black;
+}
 .produit{
     font-weight: bold;
     padding-left: 50px;
@@ -109,3 +114,49 @@ body{
 label{
     font-size: 20px;
 }
+.numbers input{
+    height: 25px;
+}
+.buttonn{
+    display: flex;
+    justify-content: end;
+    margin-top:5px;
+   
+    
+}
+.buttonn button{
+    border: none;
+    border-radius: 10px;
+    background-color:#353333;
+    color: #e5e5e5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 5px;  
+}
+.buttonn button:hover{
+    background-color: white;
+    color: black;
+}
+
+.selection{
+    display:flex;
+      
+}
+.selec{
+    width: 100%;
+    height: 25px;
+}
+.quantity input{
+    
+}
+.date input{
+    width: 230%;
+    height: 25px;
+}
+label{
+   font-size: 15px;
+}
+
+

@@ -32,13 +32,14 @@
             <label>Price</label> <br>
             <input type="number"placeholder='The number' name='price'>
            </div>
-           </div>
-          
-           <div class="button"><button type='submit'>submit</button></div>
-           
+           </div>   
            
         </form>
+        <div class="button"><button type='submit' name="submitproduct">submit</button></div>
     </div>
+          
+           
+        
     
 </body>
 </html>
