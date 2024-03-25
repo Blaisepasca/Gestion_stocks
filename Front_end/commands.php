@@ -42,6 +42,17 @@
            
         </form>
         <div class="button"><button type='submit' name="submitproduct" style="margin-top:10px">submit</button></div>
+        <div class="astres">
+        <p>
+            <span class="full-moon">🌕</span>
+            <span class="star">⭐</span>
+            <span class="star">⭐</span>
+            <span class="full-moon">🌕</span>
+            <span class="star">⭐</span>
+            <span class="star">⭐</span>
+            <span class="full-moon">🌕</span>
+</p>
+        </div>
     </div>
     
         
