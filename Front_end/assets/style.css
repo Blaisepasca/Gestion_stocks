@@ -158,5 +158,11 @@ label{
 label{
    font-size: 15px;
 }
+.star{
+    box-shadow: "0px 0px 25px cyan";
+}
+.fullMoon{
+    text-Shadow:"0px 0px 25px orange";
+}
 
 
