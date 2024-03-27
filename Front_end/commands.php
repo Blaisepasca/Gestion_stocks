@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php require 'navbar.php';?>
-<div class="produit">Product</div>
+<div class="produit">Order</div>
 
     <div class="product" style="height:200px">
         <form action="../Back_end/produit.php" class='forme' method="post">
